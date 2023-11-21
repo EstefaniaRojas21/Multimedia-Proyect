@@ -8,7 +8,12 @@ public class Serie extends MultimediaContent{
     private File seasonsFile;
 
     public Serie(String name, String author, String description, String duration, ArrayList<Season> seasons) {
-        super(name, author, description, duration);
+        super(name, author, description);
+        this.seasons = seasons;
+    }
+
+    public Serie(String name, ArrayList<Season> seasons) {
+        super(name);
         this.seasons = seasons;
     }
 

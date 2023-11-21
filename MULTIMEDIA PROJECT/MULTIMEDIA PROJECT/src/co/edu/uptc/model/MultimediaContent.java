@@ -1,19 +1,39 @@
 package co.edu.uptc.model;
 
-public class MultimediaContent {
+public class MultimediaContent extends Multimedia{
     private String name;
     private String author;
     private String description;
-    private String duration;
 
+    public void created() {
+        setName(name);
+        setAuthor(author);
+        setDescription(description);
+    }
+
+    public void remove() {
+        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+    }
+
+    public void update() {
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    }
+
+    public void delete() {
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
     
+    public MultimediaContent() {
+    }
 
+    public MultimediaContent(String name) {
+        this.name = name;
+    }
 
-    public MultimediaContent(String name, String author, String description, String duration) {
+    public MultimediaContent(String name, String author, String description) {
         this.name = name;
         this.author = author;
         this.description = description;
-        this.duration = duration;
     }
     public String getName() {
         return name;
@@ -33,10 +53,11 @@ public class MultimediaContent {
     public void setDescription(String description) {
         this.description = description;
     }
-    public String getDuration() {
-        return duration;
+
+    @Override
+    public String toString() {
+        return "MultimediaContent [name=" + name + ", author=" + author + ", description=" + description +"]";
     }
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
+
+    
 }
